@@ -1,0 +1,27 @@
+
+<table class="table table-striped projects col-md-10 offset-md-2">
+    <thead>
+      <tr>
+        <th>Fecha de Contratación</th>
+        <th>Total en dólares de salarios pagados</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% empleadosPorFecha.forEach((empleado) => { %>
+        <tr>
+          <td><%= new Date(empleado.fechaContratacion).toLocaleDateString('es-ES', {
+            day: 'numeric',
+            month: 'numeric',
+            year: 'numeric',
+          }) %></td>
+          <td>$<%= empleado.totalSalarios %></td>
+        </tr>
+      <% }); %>
+  
+      <tr>
+        <td>Total general en dólares de salarios pagados:</td>
+        <td>$<%= totalSalariosGeneral %></td>
+      </tr>
+    </tbody>
+  </table>
+  
